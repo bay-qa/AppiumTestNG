@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by abarabash on 7/19/16.
  */
-public class day2 extends TestBase{
+public class Day2 extends TestBase{
 
     @Test
     public void test001() {
