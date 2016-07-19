@@ -2,7 +2,7 @@ package pages;
 
 import Tests.TestBase;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.*;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,6 +17,8 @@ public class MainScreen extends TestBase {
         System.out.println("Initializing Main screen elements");
         PageFactory.initElements(new AppiumFieldDecorator(driver, 20, TimeUnit.SECONDS), this);
     }
+
+
 
     @AndroidFindBy(id = "main_search_bar_text")
     public MobileElement searchBar;

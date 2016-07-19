@@ -9,8 +9,6 @@ public class ScreenBase {
 
     public ScreenBase(){
 
-
-
     }
 
     public void initialize(){
