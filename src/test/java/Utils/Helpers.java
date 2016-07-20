@@ -49,6 +49,16 @@ public class Helpers extends TestBase{
             endy = starty;
 
             driver.swipe(startx, starty, endx, endy, 1000);
+
+        } else if(direction.equals("right")){
+
+            startx = (int) (screenWidth * 0.02);
+            starty = (int) (screenHeight * 0.5);
+            endx = (int) (screenWidth * 0.9);
+            endy = starty;
+
+            driver.swipe(startx, starty, endx, endy, 1000);
+
         }
 
 

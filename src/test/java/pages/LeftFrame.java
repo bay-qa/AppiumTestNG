@@ -11,14 +11,13 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by abarabash on 7/20/16.
  */
-public class RightFrame extends TestBase{
+public class LeftFrame extends TestBase{
 
-    @AndroidFindBy(id = "page_toc_item_text")
-    public MobileElement pageTocItemText;
+    @AndroidFindBy(id = "nav_account_text")
+    public MobileElement accountText;
 
-
-    public RightFrame(){
-        System.out.println("Initializing RightFrame elements");
+    public LeftFrame(){
+        System.out.println("Initializing LeftFrame elements");
         PageFactory.initElements(new AppiumFieldDecorator(driver, 20, TimeUnit.SECONDS), this);
     }
 }

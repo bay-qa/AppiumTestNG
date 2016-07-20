@@ -7,6 +7,8 @@ public class ScreenBase {
 
     public MainScreen mainScreen;
     public RightFrame rightFrame;
+    public LeftFrame leftFrame;
+
 
     public ScreenBase(){
 
@@ -16,6 +18,7 @@ public class ScreenBase {
 
         mainScreen = new MainScreen();
         rightFrame = new RightFrame();
+        leftFrame = new LeftFrame();
 
     }
 
