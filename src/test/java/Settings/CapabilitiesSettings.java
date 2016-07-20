@@ -1,5 +1,6 @@
 package Settings;
 
+import Utils.Helpers;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -81,6 +82,7 @@ public class CapabilitiesSettings {
         System.out.println("Creating Android driver...");
         driver = new AndroidDriver(serverUrl, capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Helpers.init(driver);
 
         return driver;
     }

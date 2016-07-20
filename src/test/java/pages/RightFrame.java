@@ -2,22 +2,28 @@ package pages;
 
 import Tests.TestBase;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.*;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by abarabash on 7/17/16.
- */
-public class MainScreen extends TestBase {
 
-    public MainScreen(){
-        System.out.println("Initializing Main screen elements");
+
+/**
+ * Created by abarabash on 7/19/16.
+ */
+public class RightFrame extends TestBase{
+
+    public RightFrame(){
+        System.out.println("Initializing RightFrame elements");
         PageFactory.initElements(new AppiumFieldDecorator(driver, 20, TimeUnit.SECONDS), this);
     }
 
-    @AndroidFindBy(id = "main_search_bar_text")
-    public MobileElement searchBar;
+
+    @AndroidFindBy(id = "page_toc_item_text")
+    public MobileElement pageTocItemText;
+
+
+
 }
