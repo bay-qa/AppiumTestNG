@@ -6,6 +6,7 @@ package pages;
 public class ScreenBase {
 
     public MainScreen mainScreen;
+    public RightFrame rightFrame;
 
     public ScreenBase(){
 
@@ -14,6 +15,7 @@ public class ScreenBase {
     public void initialize(){
 
         mainScreen = new MainScreen();
+        rightFrame = new RightFrame();
 
     }
 
