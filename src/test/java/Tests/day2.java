@@ -23,7 +23,7 @@ public class Day2 extends TestBase{
 
         List<WebElement> listResult = driver.findElements(By.id("page_list_item_title"));
 
-        Assert.assertTrue(listResult.get(0).getText().contains("Baskov"));
+        Assert.assertTrue(listResult.get(0).getText().contains("Metallica"));
 
         listResult.get(0).click();
 

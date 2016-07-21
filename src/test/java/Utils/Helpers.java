@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Set;
+
 /**
  * Created by abarabash on 7/20/16.
  */
@@ -26,6 +28,11 @@ public class Helpers extends TestBase{
     public static WebElement waitForElement(By locator) {
 
         return driverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public static WebElement waitForClickable(WebElement element) {
+
+        return driverWait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void swipeToDirection(String direction) {
@@ -61,6 +68,17 @@ public class Helpers extends TestBase{
 
         }
 
+        else if(direction.equals("up")){
+
+            startx = (int) (screenWidth * 0.5);
+            starty = (int) (screenHeight * 0.8);
+            endx = (int) (screenWidth * 0.5);
+            endy = (int) (screenHeight * 0.2);
+
+            driver.swipe(startx, starty, endx, endy, 1000);
+
+        }
+
 
     }
 
@@ -74,4 +92,32 @@ public class Helpers extends TestBase{
 
     }
 
+    public static void switchToWebView() {
+
+        sleep(10000);
+
+        Set<String> contextHandles = driver.getContextHandles();
+
+        for (String name : contextHandles){
+            if(name.contains("WEBVIEW")){
+                driver.context(name);
+            }
+        }
+
+       // System.out.println(driver.getPageSource());
+
+
+    }
+
+    public static void switchToNative() {
+
+        Set<String> contextHandles = driver.getContextHandles();
+
+        for (String name : contextHandles){
+            if(name.contains("NATIVE")){
+                driver.context(name);
+            }
+        }
+
+    }
 }

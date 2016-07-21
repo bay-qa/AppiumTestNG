@@ -26,6 +26,8 @@ public class Day3 extends TestBase {
     @Test
     public void test002(){
 
+        System.out.println("Test002 Started ....");
+
         waitForElement(By.id("main_search_bar_text"));
 
         swipeToDirection("right");

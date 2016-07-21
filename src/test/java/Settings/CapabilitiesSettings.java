@@ -40,8 +40,8 @@ public class CapabilitiesSettings {
         capabilities.setCapability(MobileCapabilityType.APP, prop.getProperty("application.app"));
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,
                 Integer.valueOf(prop.getProperty("new.command.timeout")));
-        capabilities.setCapability(MobileCapabilityType.DEVICE_READY_TIMEOUT,
-                prop.getProperty("device.ready.timeout"));
+//        capabilities.setCapability(MobileCapabilityType.DEVICE_READY_TIMEOUT,
+//                prop.getProperty("device.ready.timeout"));
         capabilities.setCapability(MobileCapabilityType.APP,
                 System.getProperty("user.dir") + prop.getProperty("application.path"));
     }
@@ -66,6 +66,8 @@ public class CapabilitiesSettings {
 
         capabilities.setCapability(MobileCapabilityType.APP,
                 System.getProperty("user.dir") + prop.getProperty("application.path"));
+
+         capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT, prop.getProperty("location.context"));
     }
 
     public static AppiumDriver createIOSDriver() throws MalformedURLException {
