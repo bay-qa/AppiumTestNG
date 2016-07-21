@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Set;
+
 /**
  * Created by abarabash on 7/20/16.
  */
@@ -20,6 +22,11 @@ public class Helpers extends TestBase{
 
         driverWait = new WebDriverWait(webDriver, timeoutInSeconds);
 
+    }
+
+    public static WebElement waitForClickable(WebElement mobileElement) {
+
+        return driverWait.until(ExpectedConditions.elementToBeClickable(mobileElement));
     }
 
 
@@ -74,4 +81,29 @@ public class Helpers extends TestBase{
 
     }
 
+    public static void switchToWebView() {
+
+        Set<String> contextHandles = driver.getContextHandles();
+
+        for (String name : contextHandles) {
+            if (name.contains("WEBVIEW")) {
+                driver.context(name);
+            }
+
+        }
+
+    }
+
+    public static void switchToNative() {
+
+        Set<String> contextHandles = driver.getContextHandles();
+
+        for (String name : contextHandles) {
+            if (name.contains("NATIVE")) {
+                driver.context(name);
+            }
+
+        }
+
+    }
 }
