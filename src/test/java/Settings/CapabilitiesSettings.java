@@ -17,13 +17,12 @@ import java.util.concurrent.TimeUnit;
  * Created by idorovskikh on 1/18/16.
  */
 public class CapabilitiesSettings {
+    public static String loadPropertyFile = "iOS.properties";
     private static Properties prop = new Properties();
     private static String APPIUM_PORT;
     private static DesiredCapabilities capabilities = new DesiredCapabilities();
     private static URL serverUrl;
     private static AppiumDriver driver;
-    public static String loadPropertyFile = "iOS.properties";
-
 
     public static void setIOSCapabilities() throws IOException {
         FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/properties/" + loadPropertyFile);
@@ -83,5 +82,33 @@ public class CapabilitiesSettings {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         return driver;
+    }
+
+    public static void setAndroidWEBCapabilities() throws IOException {
+        FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/properties/androidWeb.properties");
+
+        prop.load(file);
+
+        APPIUM_PORT = prop.getProperty("appium.server.port");
+
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,
+                prop.getProperty("browser.name"));
+
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,
+                prop.getProperty("device.name"));
+
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,
+                prop.getProperty("platform.name"));
+
+//        capabilities.setCapability(MobileCapabilityType.APP_ACTIVITY,
+//                prop.getProperty("app.activity"));
+
+        capabilities.setCapability(MobileCapabilityType.APP_PACKAGE,
+                prop.getProperty("app.pkg"));
+
+//        capabilities.setCapability(MobileCapabilityType.APP,
+//                System.getProperty("user.dir") + prop.getProperty("application.path"));
+
+
     }
 }
