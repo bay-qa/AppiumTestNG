@@ -74,10 +74,9 @@ public class CapabilitiesSettings {
         return driver;
     }
 
-    public static AppiumDriver createAndroidDriver() throws MalformedURLException {
-        serverUrl = new URL("http://localhost:" + APPIUM_PORT + "/wd/hub");
+    public static AppiumDriver createAndroidDriver(String port) throws MalformedURLException {
+        serverUrl = new URL("http://localhost:" + port + "/wd/hub");
 
-        System.out.println("Creating Android driver...");
         driver = new AndroidDriver(serverUrl, capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

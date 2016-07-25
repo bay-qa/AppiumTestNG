@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -105,5 +108,13 @@ public class Helpers extends TestBase{
 
         }
 
+    }
+
+    public static Properties readReadProperties(String path) throws IOException {
+        Properties prop = new Properties();
+
+        FileInputStream file = new FileInputStream(System.getProperty("user.dir") + path);
+        prop.load(file);
+        return prop;
     }
 }
