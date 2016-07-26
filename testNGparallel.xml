@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" parallel="tests" >
+
+    <test name="Device1" >
+        <parameter name="Device_ID" value="d34e9fc7" />
+        <classes>
+            <class name="Tests.Day6" />
+        </classes>
+    </test>
+
+    <test name="Device2">
+        <parameter name="Device_ID" value="5b94c266" />
+        <classes>
+            <class name="Tests.Day6" />
+        </classes>
+    </test>
+
+</suite>
