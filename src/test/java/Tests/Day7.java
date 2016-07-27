@@ -19,7 +19,7 @@ public class Day7 extends TestBase {
     private String accessToken;
 
     String applicationID = "1350956204934362";
-    String applicationSecret = "51ffda60c08edfc36bc918a65f06ec74";
+    String applicationSecret = "a8d1f6d7b13952e4c7f2b4d7ecf0";
     String userEmail;
     String userPass;
 
