@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuitWithGroupName" parallel="classes">
+
+    <test name="Test001" >
+        <groups>
+            <run>
+                <exclude name="broken" />
+                <exclude name="slow" />
+                <include name="default"/>
+                <include name="fast" />
+            </run>
+        </groups>
+
+        <packages>
+
+            <package name="PackageOfTests" />
+
+        </packages>
+
+
+
+
+    </test>
+
+
+
+
+</suite>

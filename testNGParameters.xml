@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuitWithTestsFromPackage" parallel="classes">
+
+    <parameter name="parameterForTest" value="parameterValueFromTestNGxml" />
+    <test name="Device1" >
+        <classes>
+            <class name="AnotherPackage.ClassWithMoreTests" >
+                <methods>
+                    <include name="test002" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

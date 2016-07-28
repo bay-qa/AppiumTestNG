@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuitWithTestsFromPackage" verbose="1">
+
+    <test name="Device1" >
+
+        <classes>
+            <class name="PackageOfTests.ClassWithTests" >
+                <methods>
+                    <include name="test002" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
