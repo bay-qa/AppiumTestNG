@@ -23,6 +23,7 @@ public class Day7 extends TestBase {
     @Test
     public void testFacebookLogin() {
 
+
         getUserCredentials();
 
         driver.navigate().to("http://m.facebook.com/");
